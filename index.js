@@ -42,7 +42,7 @@ app.get('/', (req, res) =>{
 
 //Peliculas
 app.get('/peliculas', (req, res) =>{
-    let sql = "SELECT ID_PELICULA,  NOMBRE,  DATE_FORMAT( FECHA, '%d/%m/%Y') as FECHA ,  PAIS,  COMENTARIOS,TIPO FROM PELICULAS"
+    let sql = "SELECT ID_PELICULA,  NOMBRE,  DATE_FORMAT( FECHA, '%d/%m/%Y') as FECHA ,  PAIS,  COMENTARIOS,TIPO FROM peliculas"
     let query = conexion.query(sql, (err, results)=>{
         if(err) throw err;
         console.log(results);
@@ -101,7 +101,6 @@ app.post('/contacto', (req, res) => {
         }
     });
 });
-
 
 
 
